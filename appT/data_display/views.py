@@ -16,6 +16,8 @@ class IndexView(generic.ListView):
     context_object_name = "rawData"
 
     data = RawData.objects.all()[:5]
+    file = open("static/data_display/raw_data.csv")
+    file.close()
 
     # if len(data) == 0:
     #     allData = pd.read_csv(static('data_display/rawData.csv'), delimiter=';')
