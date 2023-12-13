@@ -3,7 +3,7 @@ from django.utils import timezone
 
 # Create your models here.
 
-class TimeSeries(models.Model):
+class RawData(models.Model):
     dateTime = models.DateTimeField()
     value = models.FloatField()
 
@@ -15,3 +15,12 @@ class TimeSeries(models.Model):
     
     def __str__(self) -> str:
         return f"{{{self.dateTime}}}:{{{self.value}}}"
+    
+class Data15T(RawData):
+    pass
+
+class Data60T(RawData):
+    pass
+
+class Data1D(RawData):
+    pass
